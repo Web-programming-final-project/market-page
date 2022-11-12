@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            <h1> Market's Page</h1>
+        </title>
+    </head>
+
+    <body>
+        <div id="header">
+            <div class="logo">Logo here</div> <!--make this into a "link to get back to home Page"-->
+        </div>
+
+
+        <!--menu bar to search--> 
+        <div id="menu">
+            <ul class="menu">
+                <li>Home</li> <!--add home Logo--> 
+                <li class="sale-list">For Sale
+
+                    <!--catagories of home for sale--> 
+                    <ul> 
+                        <li>Urban houese</li>
+                        <li>Mansons</li>
+                        <li>House Near Lake</li>
+                        <li>house Near Downtown</li>
+                        <li>Countryside Houses</li>
+                    </ul
+                </li><!--add link to home for sale page-->
+
+
+                <!--list for rented places-->
+                <li class="rent-list">For Rent
+                    <ul>
+                        <li>House for rent</li>
+                        <li>Offices for rent </li>
+                        <li>Downtown Houses for rent</li>
+                        <li>Mansons for rent </li>
+                    </ul>
+                </li>
+
+             </ul>
+        </div>
+
+        <div id="search-box">
+            <table>
+                <tbody>
+
+                    <tr> <!--Location search bar-->
+                        <td>Location</td>
+                        <td colspan="3">
+                            <input type="text" class="location" placeholder="Type in the address you want">
+
+                            <!-- Make css for this part to appear when clicked into to search box-->
+                            <!--<div class="suggestion">Suggestion</div>
+                            <ul>
+                                <li>
+                                    <span>
+                                        Type in Street/Neighborhood, Reigon/City, Province
+                                    </span>
+                                </li>
+                                <li>If dont type in location here, You can choose Reigons from the drop boxes bellow</li>
+                            </ul>-->
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Demand</td>
+                        <td>
+                            <select class="demand">
+                                <option value="sale">Buy houses</option>
+                                <option value="rent">Rent houses</option>
+                            </select>
+                        </td>
+
+
+                        <td>Property type</td>
+                        <td>
+                            <select class="property-type">
+                                <option value="Home">---- Choose type of property ----</option>
+                                <option value="houses">Houses</option>
+                                <option value="apt">Appartment</option>
+                                <option value="office">Offices</option>
+                                <option value="mansons">Mansons</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Cities</td>
+                        <td>
+                           <select class="cites">
+                                <option value="0">-----All Cities-----</option>
+                                <option value="1">Oshawa</option>
+                                <option value="2">Ajax</option>
+                                <option value="3">Whitby</option>
+                                <option value="4">Bowmanville</option>
+                                <option value="5">Toronto</option>
+                                <option value="6">Missisauga</option>
+                                <option value="7">Scaborough</option>
+                                <option value="8">Vancouver</option>
+                                <option value="9">Calgary</option>
+                                <option value="10">Quebec</option>
+                                <option value="11">Montreal</option>
+                                <option value="12">Ottawa</option>
+                           </select>
+                        </td>
+
+                        <td>Province</td>
+                        <td>
+                            <select class="provinces" >
+                                <option value="0">-----All Provinces-----</option>
+                                <option value="1">Ontario</option>
+                                <option value="2">British Columbia</option>
+                                <option value="3">Quebec</option>
+                                <option value="4">New Brunswick</option>
+                                <option value="5">Nova Scotia</option>
+                                <option value="6">Manitoba</option>
+                                <option value="7">Alberta</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4" align="center">
+                            <input type="submit">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </body>
+</html>
