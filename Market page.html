@@ -1,3 +1,18 @@
+<?php
+
+$connection = mysqli_connect('localhost','root','','real_estate');
+if(isset($_POST['submit'])){
+    if(!empty($_POST['property_type'])){
+        $prop= $_POST['property_type']
+        $sql="SELECT * from property where Building_Type = '$prop'"
+        $result=mysqli_query($connection,$sql);
+        
+    }
+}
+
+
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -43,6 +58,7 @@
         </div>
 
         <div id="search-box">
+            <form action="" method="POST">
             <table>
                 <tbody>
 
@@ -67,7 +83,7 @@
                     <tr>
                         <td>Demand</td>
                         <td>
-                            <select class="demand">
+                            <select name="demand">
                                 <option value="sale">Buy houses</option>
                                 <option value="rent">Rent houses</option>
                             </select>
@@ -76,7 +92,7 @@
 
                         <td>Property type</td>
                         <td>
-                            <select class="property-type">
+                            <select name="property_type">
                                 <option value="Home">---- Choose type of property ----</option>
                                 <option value="houses">Houses</option>
                                 <option value="apt">Appartment</option>
@@ -89,7 +105,7 @@
                     <tr>
                         <td>Cities</td>
                         <td>
-                           <select class="cites">
+                           <select name="cites">
                                 <option value="0">-----All Cities-----</option>
                                 <option value="1">Oshawa</option>
                                 <option value="2">Ajax</option>
@@ -108,7 +124,7 @@
 
                         <td>Province</td>
                         <td>
-                            <select class="provinces" >
+                            <select name="provinces" >
                                 <option value="0">-----All Provinces-----</option>
                                 <option value="1">Ontario</option>
                                 <option value="2">British Columbia</option>
@@ -123,11 +139,12 @@
 
                     <tr>
                         <td colspan="4" align="center">
-                            <input type="submit">
+                            <input type="submit" name="submit">
                         </td>
                     </tr>
                 </tbody>
             </table>
+            </form>
         </div>
         
     </body>
