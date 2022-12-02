@@ -1,3 +1,4 @@
+<?php
 $connection = mysqli_connect('localhost','root','','real_estate');
 if(isset($_POST['submit'])){
     if(!empty($_POST['property_type'])){
@@ -5,49 +6,57 @@ if(isset($_POST['submit'])){
         // ensure that $select is valid and not SQL injection
         $sql="SELECT * From property where Building_Type = '$select'";
         $result=mysqli_query($connection,$sql);
-        while($output=mysqli_fetch_assoc($result)){
-        echo "<pre>";
-        print_r($output);
-        echo "</pre>";
-    }
+        
     }
     if(!empty($_POST['cites'])){
         $select=$_POST['cites'];
+        switch($select){
+            case 1:
+                $select= "Oshawa";
+                break;
+            case 2:
+                $select= "Ajax";
+                break;
+            case 3:
+                $select="Whitby";
+                break;
+            case 4:
+                $select="Toronto";
+                break;
+            case 5:
+                $select="Vancouver";
+                break;
+            case 6:
+                $select="Quebec";
+                break;
+            case 7:
+                $select="Ottawa";
+                break;
+            default:
+            echo "{$select} is not available";
+        
+        }
+        echo "{$select}";
         // ensure that $select is valid and not SQL injection
-        $sql="SELECT * From property where Building_Type = '$select'";
+        $sql="SELECT * From property where city = '$select'";
         $result=mysqli_query($connection,$sql);
-        while($output=mysqli_fetch_assoc($result)){
-        echo "<pre>";
-        print_r($output);
-        echo "</pre>";
-    }
+       
     }
     if(!empty($_POST['property_type'])){
         $select=$_POST['property_type'];
         // ensure that $select is valid and not SQL injection
         $sql="SELECT * From property where Building_Type = '$select'";
         $result=mysqli_query($connection,$sql);
-        while($output=mysqli_fetch_assoc($result)){
-        echo "<pre>";
-        print_r($output);
-        echo "</pre>";
-    }
+        
     }
     if(!empty($_POST['property_type'])){
         $select=$_POST['property_type'];
         // ensure that $select is valid and not SQL injection
         $sql="SELECT * From property where Building_Type = '$select'";
         $result=mysqli_query($connection,$sql);
-        while($output=mysqli_fetch_assoc($result)){
-        echo "<pre>";
-        print_r($output);
-        echo "</pre>";
-    }
+        
     }
 }
-
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -145,16 +154,11 @@ if(isset($_POST['submit'])){
                                 <option value="0">-----All Cities-----</option>
                                 <option value="1">Oshawa</option>
                                 <option value="2">Ajax</option>
-                                <option value="3">Whitby</option>
-                                <option value="4">Bowmanville</option>
-                                <option value="5">Toronto</option>
-                                <option value="6">Missisauga</option>
-                                <option value="7">Scaborough</option>
-                                <option value="8">Vancouver</option>
-                                <option value="9">Calgary</option>
-                                <option value="10">Quebec</option>
-                                <option value="11">Montreal</option>
-                                <option value="12">Ottawa</option>
+                                <option value="3">Whitby</option>                                
+                                <option value="4">Toronto</option>              
+                                <option value="5">Vancouver</option>                                
+                                <option value="6">Quebec</option>                                
+                                <option value="7">Ottawa</option>
                            </select>
                         </td>
 
@@ -182,6 +186,14 @@ if(isset($_POST['submit'])){
             </table>
             </form>
         </div>
-        
+        <div>
+            <?php
+            while($output=mysqli_fetch_assoc($result)){
+                echo "<pre>";
+                print_r($output);
+                echo "</pre>";
+            }
+            ?>
+        </div>
     </body>
 </html>
