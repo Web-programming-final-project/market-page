@@ -1,12 +1,48 @@
-<?php
-
 $connection = mysqli_connect('localhost','root','','real_estate');
 if(isset($_POST['submit'])){
     if(!empty($_POST['property_type'])){
-        $prop= $_POST['property_type']
-        $sql="SELECT * from property where Building_Type = '$prop'"
+        $select=$_POST['property_type'];
+        // ensure that $select is valid and not SQL injection
+        $sql="SELECT * From property where Building_Type = '$select'";
         $result=mysqli_query($connection,$sql);
-        
+        while($output=mysqli_fetch_assoc($result)){
+        echo "<pre>";
+        print_r($output);
+        echo "</pre>";
+    }
+    }
+    if(!empty($_POST['cites'])){
+        $select=$_POST['cites'];
+        // ensure that $select is valid and not SQL injection
+        $sql="SELECT * From property where Building_Type = '$select'";
+        $result=mysqli_query($connection,$sql);
+        while($output=mysqli_fetch_assoc($result)){
+        echo "<pre>";
+        print_r($output);
+        echo "</pre>";
+    }
+    }
+    if(!empty($_POST['property_type'])){
+        $select=$_POST['property_type'];
+        // ensure that $select is valid and not SQL injection
+        $sql="SELECT * From property where Building_Type = '$select'";
+        $result=mysqli_query($connection,$sql);
+        while($output=mysqli_fetch_assoc($result)){
+        echo "<pre>";
+        print_r($output);
+        echo "</pre>";
+    }
+    }
+    if(!empty($_POST['property_type'])){
+        $select=$_POST['property_type'];
+        // ensure that $select is valid and not SQL injection
+        $sql="SELECT * From property where Building_Type = '$select'";
+        $result=mysqli_query($connection,$sql);
+        while($output=mysqli_fetch_assoc($result)){
+        echo "<pre>";
+        print_r($output);
+        echo "</pre>";
+    }
     }
 }
 
@@ -17,7 +53,7 @@ if(isset($_POST['submit'])){
 <html>
     <head>
         <title>
-            <h1> Market's Page</h1>
+            Market's Page
         </title>
     </head>
 
@@ -94,10 +130,10 @@ if(isset($_POST['submit'])){
                         <td>
                             <select name="property_type">
                                 <option value="Home">---- Choose type of property ----</option>
-                                <option value="houses">Houses</option>
-                                <option value="apt">Appartment</option>
-                                <option value="office">Offices</option>
-                                <option value="mansons">Mansons</option>
+                                <option value="House">Houses</option>
+                                <option value="Apartment">Appartment</option>
+                                <option value="Duplex">duplex</option>
+                                
                             </select>
                         </td>
                     </tr>
