@@ -192,13 +192,18 @@ if(isset($_POST['submit'])){
             </form>
         </div>
         <div>
-            <?php
-            while($output=mysqli_fetch_assoc($result)){
-                echo "<pre>";
-                print_r($output);
-                echo "</pre>";
-            }
-            ?>
+           <div>
+            <?php foreach ($result as $output){ ?>
+            Building Type: <?php echo $output['Building_Type']."<br>"; ?>
+            Land size: <?php echo $output['Land_Size']."<br>"; ?>
+            Bed Room: <?php echo $output['Bed_Room']."<br>"; ?>
+            Description: <?php echo $output['Description']."<br>"; ?> 
+            Address: <?php echo $output['address']."<br>";?>
+            Postal code:<?php echo $output['Postal_code']."<br>";?>
+            Price: <?php echo $output['Price']."<br>"?>
+            <br><br>
+            <?php    } ?>
+        </div>
         </div>
     </body>
 </html>
