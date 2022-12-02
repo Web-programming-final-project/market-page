@@ -1,15 +1,15 @@
 <?php
 $connection = mysqli_connect('localhost','root','','real_estate');
-if(isset($_POST['submit'])){
-    if(!empty($_POST['property_type'])){
-        $select=$_POST['property_type'];
+if(isset($_GET['submit'])){
+    if(!empty($_GET['property_type'])){
+        $select=$_GET['property_type'];
         // ensure that $select is valid and not SQL injection
-        $sql="SELECT * From property where Building_Type = '$select'";
+        $sql="SELECT Building_Type, Description, Bed_Room, Garage, Address, Postal_code, Price From property where Building_Type = '$select'";
         $result=mysqli_query($connection,$sql);
         
     }
-    if(!empty($_POST['cites'])){
-        $select=$_POST['cites'];
+    if(!empty($_GET['cites'])){
+        $select=$_GET['cites'];
         switch($select){
             case 1:
                 $select= "Oshawa";
@@ -42,8 +42,8 @@ if(isset($_POST['submit'])){
         $result=mysqli_query($connection,$sql);
        
     }
-    if(!empty($_POST['provinces'])){
-        $select=$_POST['provinces'];
+    if(!empty($_GET['provinces'])){
+        $select=$_GET['provinces'];
         switch($select){
             case 1:
                 $select= "Ontario";
@@ -79,12 +79,19 @@ if(isset($_POST['submit'])){
         }
     }
     
-    if(!empty($_POST['property_type'])){
-        $select=$_POST['property_type'];
+    if(!empty($_GET['property_type'])){
+        $select=$_GET['property_type'];
         // ensure that $select is valid and not SQL injection
         $sql="SELECT * From property where Building_Type = '$select'";
         $result=mysqli_query($connection,$sql);
         
+    }
+
+    $search="";
+    if(isset($_GET['search'])){
+        $search=$_GET['search'];
+        $sql="SELECT * from property where address like '%$search%'";
+        $result= mysqli_query($connection,$sql);
     }
 }
 ?>
@@ -108,14 +115,15 @@ if(isset($_POST['submit'])){
         </div>
 
         <div id="search-box">
-            <form action="" method="POST">
+            <form action="" method="GET">
             <table>
                 <tbody>
 
                     <tr> <!--Location search bar-->
                         <td>Location</td>
                         <td colspan="3">
-                            <input type="text" class="location" placeholder="Type in the address you want">
+                            <input type="text" name="search" placeholder="Type in the address you want " value="<?php echo $search ?>">
+                           
 
                             <!-- Make css for this part to appear when clicked into to search box-->
                             <!--<div class="suggestion">Suggestion</div>
@@ -192,7 +200,6 @@ if(isset($_POST['submit'])){
             </form>
         </div>
         <div>
-           <div>
             <?php foreach ($result as $output){ ?>
             Building Type: <?php echo $output['Building_Type']."<br>"; ?>
             Land size: <?php echo $output['Land_Size']."<br>"; ?>
@@ -203,7 +210,6 @@ if(isset($_POST['submit'])){
             Price: <?php echo $output['Price']."<br>"?>
             <br><br>
             <?php    } ?>
-        </div>
         </div>
     </body>
 </html>
