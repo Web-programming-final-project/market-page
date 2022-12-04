@@ -388,15 +388,3 @@ $result= mysqli_query($connection,$sql);
     </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
