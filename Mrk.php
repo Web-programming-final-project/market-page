@@ -184,7 +184,7 @@ if(isset($_GET['submit'])){
     <div class="bars">
 
         <div class="rectangle">
-            <h2 class="company" id="company" style="float:left; color:white" ;>Tati</h2>
+            <h2 class="company" id="company" style="float:left; color:white" ;>Homeverse</h2>
 
             <h2 class="Pagename" id="pagename" style="float:right; color:white;">Market </h2>
             <br />
@@ -269,7 +269,7 @@ if(isset($_GET['submit'])){
 
 
     <div class="rectangle">
-        <footer style="color:white;">Copyright &copy: Tati</footer>
+        <footer style="color:white;">Copyright &copy: Homeverse</footer>
     </div>
 </body>
 </html>
