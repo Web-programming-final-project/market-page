@@ -183,7 +183,7 @@ if(isset($_GET['submit'])){
 
         <div class="link">
             <ul class="aa">
-                <li class="asa" id="hvr"><a class="hrv" href="home.html">Home</a></li>
+                <li class="asa" id="hvr"><a class="hrv" href="Main.html">Home</a></li>
                 <li class="asa" id="hvr"><a href="#market">Market</a></li>
 
                 <li class="asas" id="hvr"><a href="Agents.html">Agents</a></li>
