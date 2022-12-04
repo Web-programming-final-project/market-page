@@ -218,7 +218,7 @@ if(isset($_GET['submit'])){
     <div id="searchbox">
         <form action="" method="GET">
             <h2 class="uio">Search for houses on the market below!</h2>
-            <input style="float:left; left:5%;" type="text" name="search" class="search" id="search" placeholder="Type in the address you want "
+            <input style="float:left; left:5%;" type="text" name="search" class="search" id="search" placeholder="Try Oshawa, or Ajax, or Simcoe..."
                    value="<?php echo $search ?>">
             <input style="float:right" type="submit" value="Browse!" name="submit" class="submit" id="submit" />
         </form>
