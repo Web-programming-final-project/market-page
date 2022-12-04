@@ -1,5 +1,9 @@
 <?php
 $connection = mysqli_connect('localhost','root','','real_estate');
+
+$result='';
+
+$search='';
 if(isset($_GET['submit'])){
     if(!empty($_GET['property_type'])){
         $select=$_GET['property_type'];
@@ -229,7 +233,7 @@ if(isset($_GET['submit'])){
             Description: <?php echo $output['Description']."<br>"; ?> 
             Address: <?php echo $output['address']."<br>";?>
             Postal code:<?php echo $output['Postal_code']."<br>";?>
-            Price: <?php echo $output['Price']."<br>"?>
+            Price: $<?php echo $output['Price']."<br>"?>
             <br><br>
             <?php    } ?>
         </div>
