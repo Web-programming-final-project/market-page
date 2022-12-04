@@ -27,8 +27,6 @@ if(isset($_GET['submit'])){
             case 7:
                 $select="Ottawa";
                 break;
-            default:
-            echo "{$select} is not available";
         
         }
             $sql.=" AND city = '$select'";      
@@ -57,8 +55,7 @@ if(isset($_GET['submit'])){
             case 7:
                 $select="Alberta";
                 break;
-            default:
-            echo "{$select} is not available";        
+               
         }
  
         $sql.=" AND Province = '$select'"; 
@@ -71,6 +68,24 @@ if(isset($_GET['submit'])){
     if(isset($_GET['search'])){
         $search=$_GET['search'];
         $sql.="AND address like '%$search%'";   
+    }
+    if(!empty($_GET['price'])){
+        $select=$_GET['price'];
+        switch($select){
+            case 1:
+                $min= 200000;
+                $max=600000;
+                break;
+            case 2:
+                $min= 600000;
+                $max=1000000;
+                break;
+            case 3:
+                $min=1000000;
+                $max=2000000;
+                break;               
+        }
+        $sql.=" AND Price BETWEEN '$min' And '$max'"; 
     }
     
 }
@@ -110,11 +125,13 @@ $result= mysqli_query($connection,$sql);
                     </tr>
 
                     <tr>
-                        <td>Demand</td>
+                        <td>Price</td>
                         <td>
-                            <select name="demand">
-                                <option value="sale">Buy houses</option>
-                                <option value="rent">Rent houses</option>
+                            <select name="price">
+                                <option value="">---- All price range ----</option>
+                                <option value="1">$200,000-$600,000</option>
+                                <option value="2">$600,000 - $1,000,000</option>
+                                <option value="3">over $1,000,000</option>
                             </select>
                         </td>
 
