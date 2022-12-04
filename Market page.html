@@ -114,7 +114,6 @@ $result= mysqli_query($connection,$sql);
             <form action="" method="GET">
             <table>
                 <tbody>
-
                     <tr>                         
                     <td>Location</td>
                         <td colspan="3">
@@ -197,6 +196,7 @@ $result= mysqli_query($connection,$sql);
             Address: <?php echo $output['address']."<br>";?>
             Postal code:<?php echo $output['Postal_code']."<br>";?>
             Price: <?php echo "$".$output['Price']." <br>"?>
+            <img src="<?php echo $output['Picture']?>" alt="Housing picture">
             <br><br>
             <?php    } 
             $connection -> close();?>
