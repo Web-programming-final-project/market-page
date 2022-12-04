@@ -120,6 +120,7 @@ if(isset($_GET['submit'])){
         border-right: none;
         margin-top: 3%;
         margin-left:5%;
+         margin-bottom:2%;
     }
     .submit {
         border: 0.5px solid black;
@@ -130,6 +131,7 @@ if(isset($_GET['submit'])){
         margin-top: 3%;
         margin-right: 5%;
         background-color: navajowhite;
+         margin-bottom:2%;
     }
     .submit:hover {
         background-color: #2F4454;
@@ -150,6 +152,16 @@ if(isset($_GET['submit'])){
     .res{
 
     padding:85px;
+    }
+       font-size:15px;
+    background-color:lightgray;
+    }
+
+    .filters{
+    margin-left:20%;
+
+    top-margin:15%;
+
     }
 </style>
 
