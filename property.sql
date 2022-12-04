@@ -1,4 +1,4 @@
-REATE TABLE `property` (
+CREATE TABLE `property` (
   `ID` int(11) NOT NULL,
   `Building_Type` varchar(100) NOT NULL,
   `Land_Size` varchar(100) NOT NULL,
